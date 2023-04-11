@@ -2,6 +2,8 @@
 
 import Home from './Home';
 
+import {BrowserRouter as Router ,Route, Routes} from "react-router-dom"
+import Navbar from "./navbar";
 function App() {
  const title = 'welcome to the new';
  const likes = 50;
@@ -9,20 +11,22 @@ function App() {
  const link = "http://www.google.com";
 
   return (
-    <div className="App">//1st container
-      <div className="content">
-        <h1>{title}</h1>
-      <p>liked {likes} times</p>
 
-      {/* <p>{ person }</p> */}
-      <p> {10} </p>
-      <p>{"hello, ninjas"}</p>
-      <p>{ [1,2,3,4,5] }</p>
-      {/*<p>{math.random() *10 }</p>*/}
 
-    <a href={link} >google site</a>
+          <Router>
+              <div ClassName="app">
+                  <Navbar/>
+                  <div ClassName = "content">
+
+                      <Routes>
+                          <Route path= "/" element={<Home/>}/>
+
+                      </Routes>
+
+
+</div>
     </div>
-  </div>
+  </Router>
   );
 }
 
